@@ -300,7 +300,7 @@ outer:
 
 func getCallerIgnoringLogMulti(callDepth int) (string, int) {
 	// the +1 is to ignore this (getCallerIgnoringLogMulti) frame
-	return getCaller(callDepth+1, "/pkg/log/log.go", "/pkg/io/multi.go")
+	return getCaller(callDepth+1, "/log/log.go", "/io/multi.go")
 }
 
 // Write encodes the given string in a GELF message and sends it to
