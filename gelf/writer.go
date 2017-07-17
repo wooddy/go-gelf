@@ -298,7 +298,7 @@ outer:
 	return
 }
 
-func getCallerIgnoringLogMulti(callDepth int) (string, int) {
+func GetCallerIgnoringLogMulti(callDepth int) (string, int) {
 	// the +1 is to ignore this (getCallerIgnoringLogMulti) frame
 	return getCaller(callDepth+1, "/log/log.go", "/io/multi.go")
 }
@@ -308,7 +308,7 @@ func getCallerIgnoringLogMulti(callDepth int) (string, int) {
 func (w *Writer) Write(p []byte) (n int, err error) {
 
 	// 1 for the function that called us.
-	file, line := getCallerIgnoringLogMulti(1)
+	file, line := GetCallerIgnoringLogMulti(1)
 
 	// remove trailing and leading whitespace
 	p = bytes.TrimSpace(p)
